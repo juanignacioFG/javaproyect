@@ -19,5 +19,17 @@ public class PrimitiveTypes {
         char letras = 'S';
         System.out.println(letras);
 
+        String name = "sergi";
+
+        String apellido = new String("virgy");
+
+        String fullname = name + " " + apellido;
+
+        System.out.println(fullname);
+
+        if (name.equals("sergi")) {
+            System.out.println("el nombre es sergi");
+        }
+
     }
 }
