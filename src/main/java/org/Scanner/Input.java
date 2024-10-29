@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class Input {
 
     public static void main(String[] args) {
+
+
         String user = "admin";
         String password = "1234";
         int contador = 0;
+        boolean autenticado = false;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -19,24 +22,19 @@ public class Input {
             System.out.println("Contraseña: ");
             String contrasenya = scanner.nextLine();
 
-            if ((nombre.equals(user)) && (contrasenya.equals(password))) {
-
+            if (nombre.equals(user) && contrasenya.equals(password)) {
                 System.out.println("Usuario y contraseña son correctos");
-
-                break;
+                autenticado = true;
+                contador = 3;
             } else {
                 System.out.println("Usuario y/o contraseña inválido");
             }
             contador++;
         }
-
-
+        if (!autenticado) {
+            System.out.println("Has excedido el número de intentos");
+        }
         scanner.close();
     }
-
-
-
-
 }
-
 
